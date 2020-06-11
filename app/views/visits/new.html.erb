@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1> Create your visit </h1>
+            <%= simple_form_for @visit do |f| %>
+                <%= f.input :title %>
+                <%= f.input :description %>
+                <%= f.input :price %>
+                <%= f.input :place %>
+                <%= f.input :tag %>
+                <%= f.input :photo, as: :file %>
+                <%= f.button :submit, class: 'btn btn-primary' %>
+            <% end %>
+        </div>
+    </div>
+</div>
+<%= link_to 'Back', visits_path  %>
