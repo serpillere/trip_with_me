@@ -7,3 +7,9 @@
     <%= link_to 'Destroy', visit_path(@visit), class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' }%>
 <%end%>
 <%= link_to 'Back', visits_path  %>
+
+<%= simple_form_for ([ @visit, @booking ]) do |f| %>
+    <%= f.input :checking_date %>
+    <%= f.input :checkout_date %>
+    <%= f.submit "Submit booking", class: "btn btn-primary" %>
+  <% end %>
