@@ -1,35 +1,12 @@
-.navbar-band {
-  height: 60px;
-  width: 100%;
-  background-color: rgb(236, 236, 236);
-  display: flex;
-  justify-content: space-between ;
-   align-items: center ; 
-   padding-left: 50px;
-   padding-right: 50px;
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
 }
 
-.navbar-left {
-  left: 50px;
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
 
-.navbar-center {
-
-}
-
-.navbar-right {
-  right: 50px;
-}
-
-.buttonnav1 {
-  background-color: grey;
-  opacity: 0.3;
-  width: 150px;
-  height: 40px;
-}
-.buttonnav2 {
-  background-color: grey;
-  opacity: 0.3;
-  width: 230px;
-  height: 40px;
+.navbar-lewagon .navbar-brand img {
+  width: 70px;
 }
