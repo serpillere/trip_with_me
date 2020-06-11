@@ -1,0 +1,9 @@
+<h1><%= @visit.title %></h1>
+<%= @visit.description  %>
+<%= @visit.price %>
+<%= cl_image_tag @visit.photo.key, height: 300, width: 400, crop: :fill %>
+<% if current_user.id == @visit.user_id %>
+    <%= link_to 'Edit', edit_visit_path(@visit), class: 'btn btn-primary'%>
+    <%= link_to 'Destroy', visit_path(@visit), class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' }%>
+<%end%>
+<%= link_to 'Back', visits_path  %>
