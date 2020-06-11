@@ -11,35 +11,22 @@ User.destroy_all
 
 
 puts "Creating visit..."
-30.times do
-    user = {
+10.times do
+    user = User.create(
     email: ,
     password: 
-    }
-    visit =  {
+    )
+
+    30.times do
+    Visit.create(
     title: ,
     description: ,
     price: ,
     place: ,
     tag:,
-    user_id: user.id
-    }
-
-    user2 = {
-    email: ,
-    password: 
-    }
-
-    booking = {
-    checking_date:
-    checkout_date:
-    user_id: user2.id
-    visit_id: visit.id
-    }
-
-    [user, visit, user2].each do |attributes|
-    tour = Tour.create!(attributes) #booking?
+    user: user
+    )
     end
 end
 puts "Finished!"
-puts "#{Tour.count} tours created"
+puts "#{Visit.count}  visits created"
