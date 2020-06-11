@@ -1,14 +1,20 @@
 <h1> Vue index visit </h1>
 
 <% @visits.each do |visit| %>
-    <% if visit.photo.attached?  %>
-        <%= cl_image_tag visit.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <%= visit.title %>
-    <%= visit.description %>
-    <%= visit.price %>
-    <%= visit.place %>
-    <%= visit.tag %>
-    <%= link_to 'Voir la visite', visit_path(visit), class: 'btn btn-primary btnloc'%>
+    <div class="card-visit">
+        <% if visit.photo.attached?  %>
+            <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
+        <% end %>
+        <div class="card-info">
+            <%= visit.title %>
+            <%#= visit.description %>
+                <div class="card-info-bottom">
+                    <%= visit.place %>
+                    <%= visit.price %>
+                </div>
+            <%#= visit.tag %>
+            <%#= link_to 'Voir la visite', visit_path(visit), class: 'btn btn-primary btnloc'%>
+        </div>
+    </div>
 <% end %>
 <%= link_to 'Create my visit', new_visit_path, class: 'btn btn-primary btn btncreate'  %>
