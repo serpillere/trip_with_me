@@ -13,10 +13,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Créer une visite ", "#", class: "nav-link" %>
+        <%= link_to "Créer une visite ", new_visit_path, class: "nav-link color" %>
       </li>
       <li class="nav-item active">
-        <%= link_to "Demander une visite", "#", class: "nav-link" %>
+        <%= link_to "Demander une visite", visits_path, class: "nav-link" %>
       </li>
       <li class="nav-item active">
         <%= link_to "Devenez guides", "#", class: "nav-link" %>
@@ -28,19 +28,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Connexion", "#", class: "nav-link" %>
+        <%= link_to "Connexion", new_user_password_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Deconnexion", "#", class: "nav-link" %>
+        <%= link_to "Deconnexion", destroy_user_session_path, class: "nav-link" %>
+
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Dashboard", "#", class: "dropdown-item" %>
-          <%= link_to "Deconnection", "#", class: "dropdown-item" %>
+          <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+          <%= link_to "Deconnection", cancel_user_registration_path, class: "dropdown-item" %>
         </div>
       </li>
     </ul>

@@ -1,14 +1,26 @@
-<h1> Vue index visit </h1>
-
+<%# <h1> Vue index visit </h1> %>
+<div class="container d-flex justify-content-around flex-wrap col-lg-10">
 <% @visits.each do |visit| %>
-    <% if visit.photo.attached?  %>
-        <%= cl_image_tag visit.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <%= visit.title %>
-    <%= visit.description %>
-    <%= visit.price %>
-    <%= visit.place %>
-    <%= visit.tag %>
-    <%= link_to 'Voir la visite', visit_path(visit), class: 'btn btn-primary btnloc'%>
+<%= link_to visit_path(visit) do %>
+
+    <div class="card-visit">
+        <% if visit.photo.attached?  %>
+            <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
+        <% end %>
+        <div class="card-info">
+        <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
+            <h3><%= visit.title %><h3>
+                <div class="card-info-bottom d-flex justify-content-between">
+                    <p><%= visit.place %></p>
+                    <p><%= visit.price %></p>
+                </div>
+        </div>
+    </div>
+<% end %>
 <% end %>
 <%= link_to 'Create my visit', new_visit_path, class: 'btn btn-primary btn btncreate'  %>
+</div>
+<%#= link_to 'Louez moi', car_path(car), class: 'btn btn-primary btnloc'%>
+            <%#= link_to 'Voir la visite', visit_path(visit), class: 'btn btn-primary btnloc'%>
+            <%#= visit.description %>
+            <%#= visit.tag %>

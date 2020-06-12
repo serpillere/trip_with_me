@@ -4,7 +4,12 @@
 @import "navbar";
 @import "footer";
 @import "home";
+@import "indexvisit";
+@import "formulaire";
+
 
 body {
     background-color: #fffaf3;
+    position: relative;
+    padding-bottom: 130px;
 }
