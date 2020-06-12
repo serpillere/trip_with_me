@@ -17,7 +17,7 @@
     <%= simple_form_for ([ @visit, @booking ]) do |f| %>
         <%= f.input :checking_date %>
         <%= f.input :checkout_date %>
-        <%= f.submit "Reservez votre visite", class: "btn btn-primary btn-formulaire-sub" %>
+        <%= f.submit "Reservez", class: "btn btn-primary btn-formulaire-sub" %>
     <% end %>
     <%= link_to 'Back', visits_path  %>
     </div>
