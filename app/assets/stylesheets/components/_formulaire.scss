@@ -1,4 +1,26 @@
 
 .formulaire {
     font-size: 18px;
+    width: 100%;
+    height: auto;
+    background-color: #f7d4bb;
+    border-radius: 15px;
+    box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.formulaire-cell {
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    
+}
+
+.btn-formulaire-sub {
+    width: 100%;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.25);
+    // display: flex;
+    // justify-self: space-around;
 }
