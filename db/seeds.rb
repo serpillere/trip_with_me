@@ -14,15 +14,15 @@ puts "Creating visit..."
 10.times do
     user = User.create(
     email: ,
-    password: 
+    password: "123456"
     )
 
     30.times do
     Visit.create(
-    title: ,
+    title: Faker::Internet.email,
     description: ,
-    price: ,
-    place: ,
+    price: rand(60,80,100,40),
+    place: Faker::Address.city,
     tag:,
     user: user
     )

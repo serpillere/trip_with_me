@@ -1,11 +1,13 @@
+<div class="container formulaire col-lg-4">
 <%= simple_form_for @visit do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :place %>
-  <%= f.input :tag %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit, class: 'btn btn-primary' %>
+  <h2><%= f.input :title %></h2>
+  <h2><%= f.input :description %></h2>
+  <h2><%= f.input :price %></h2>
+  <h2><%= f.input :place %></h2>
+  <h2><%= f.input :tag %></h2>
+  <h2><%= f.input :photo, as: :file %></h2>
+  <h2><%= f.button :submit, class: 'btn btn-primary' %></h2>
 <% end %>
 
-<%= link_to 'Back', visits_path, class: 'btn btn-primary' %>
+<h2><%= link_to 'Back', visits_path, class: 'btn btn-primary' %></h2>
+</div>
