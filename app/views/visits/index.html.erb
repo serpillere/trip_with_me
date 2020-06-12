@@ -1,6 +1,8 @@
 <%# <h1> Vue index visit </h1> %>
 <div class="container d-flex justify-content-around flex-wrap col-lg-10">
 <% @visits.each do |visit| %>
+<%= link_to visit_path(visit) do %>
+
     <div class="card-visit">
         <% if visit.photo.attached?  %>
             <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
@@ -14,6 +16,7 @@
                 </div>
         </div>
     </div>
+<% end %>
 <% end %>
 <%= link_to 'Create my visit', new_visit_path, class: 'btn btn-primary btn btncreate'  %>
 </div>
