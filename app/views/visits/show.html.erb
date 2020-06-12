@@ -1,15 +1,24 @@
-<h1><%= @visit.title %></h1>
-<%= @visit.description  %>
-<%= @visit.price %>
-<%= cl_image_tag @visit.photo.key, height: 300, width: 400, crop: :fill %>
-<% if current_user.id == @visit.user_id %>
-    <%= link_to 'Edit', edit_visit_path(@visit), class: 'btn btn-primary'%>
-    <%= link_to 'Destroy', visit_path(@visit), class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' }%>
-<%end%>
-<%= link_to 'Back', visits_path  %>
-
-<%= simple_form_for ([ @visit, @booking ]) do |f| %>
-    <%= f.input :checking_date %>
-    <%= f.input :checkout_date %>
-    <%= f.submit "Submit booking", class: "btn btn-primary" %>
-  <% end %>
+<div class="container formulaire col-lg-8">
+    <div class="visit-booking-form">
+        <%= cl_image_tag @visit.photo.key, height: 300, width: 400, crop: :fill, class:"img-visit-booking" %>
+        <div class="visit-booking-desc">
+            <h1><%= @visit.title %></h1>
+            <h2><%= @visit.description  %></h2>
+            <h2><%= @visit.price %></h2>
+        </div>
+    </div>
+    <div class="visit-booking-btn">
+        <% if current_user.id == @visit.user_id %>
+            <%= link_to 'Edit', edit_visit_path(@visit), class: 'btn btn-primary'%>
+            <%= link_to 'Destroy', visit_path(@visit), class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' }%>
+        <%end%>
+    <%= link_to 'Back', visits_path  %>
+    </div>
+    <div class="visit-booking-form">
+    <%= simple_form_for ([ @visit, @booking ]) do |f| %>
+        <%= f.input :checking_date %>
+        <%= f.input :checkout_date %>
+        <%= f.submit "Submit booking", class: "btn btn-primary" %>
+    <% end %>
+    </div>
+</div>
