@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   
   def home
+    @visits = Visit.all
   end
 
   def dashboard
