@@ -13,17 +13,14 @@
 
   <body>
     <div id="page-container">
-    <% if user_signed_in? %>
-      <%= render "layouts/navbar-log-in" %>  
-    <%else%>
-      <%= render "layouts/navbar-log-out" %>
-    <% end %>
-    
-    <%# <div class="container"> %>
-
-    <%= yield %>
-    <%= render 'shared/flashes' %>
-    <%# </div> %>
-    <%= render 'shared/footer' %>
+      <% if user_signed_in? %>
+        <%= render "layouts/navbar-log-in" %>  
+      <%else%>
+        <%= render "layouts/navbar-log-out" %>
+      <% end %>
+      <%= yield %>
+      <%= render 'shared/flashes' %>
+    </div> 
+      <%= render 'shared/footer' %>
   </body>
 </html>
