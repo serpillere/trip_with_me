@@ -12,7 +12,13 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <div id="page-container">
+    <% if user_signed_in? %>
+      <%= render "layouts/navbar-log-in" %>  
+    <%else%>
+      <%= render "layouts/navbar-log-out" %>
+    <% end %>
+    
     <%# <div class="container"> %>
 
     <%= yield %>
