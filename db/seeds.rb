@@ -13,18 +13,19 @@ User.destroy_all
 puts "Creating visit..."
 10.times do
     user = User.create(
-    email: ,
+    email: Faker::Internet.email,
     password: "123456"
     )
 
     30.times do
     Visit.create(
-    title: Faker::Internet.email,
+    title: ,
     description: ,
     price: rand(60,80,100,40),
     place: Faker::Address.city,
-    tag:,
+    tag: ,
     user: user
+
     )
     end
 end

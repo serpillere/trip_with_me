@@ -1,11 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #faaf2a;
   padding-left: 60px;
   padding-right: 60px;
   box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.25);
   // color:#FD7C20;
   margin-bottom: 40px;
+  color: white;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,6 +19,13 @@
 }
 
 .color {
-  // color: red !important;
+  color: white !important;
   font-weight: 500 !important;
+  font-size: 20px;
+}
+
+.logo-design {
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 40px;
 }
