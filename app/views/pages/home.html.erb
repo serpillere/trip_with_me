@@ -1,12 +1,12 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591964426/amies-plage-ete-voyage-joie_ot0afn.jpg);">
-  <div class="container">
-    <h1>TRIP WITH ME </h1>
-    <p>Un voyage authentique</p>
+  <div class="container picture-banner">
+    <h1>Un voyage authentique</h1>
+    <%# <p>Un voyage authentique</p> %>
   </div>
 </div>
 
 
-<div class="container">
+<div class="container col-lg-9">
     <div class="aventure">
         <h2>Partir à l'aventure</h2>
         <div class="aventure-galery d-flex justify-content-around flex-wrap">
@@ -29,7 +29,7 @@
         </div>
     </div>
     
-    <div class="container d-flex justify-content-around flex-wrap col-lg-10">
+    <div class="container d-flex justify-content-around flex-wrap">
 <% @visits.each do |visit| %>
 <%= link_to visit_path(visit) do %>
 

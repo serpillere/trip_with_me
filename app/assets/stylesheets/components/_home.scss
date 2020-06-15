@@ -1,17 +1,25 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 120px;
   box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.25);
   margin-top: -40px;
+  height: 75vh;
+  position: relative;
+}
+
+.picture-banner {
+  position: absolute;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 80px;
   font-weight: bold;
+  font-style: italic;
+  
 }
 
 .banner p {
@@ -31,7 +39,7 @@
 .img-aventure {
     width: 300px;
     height: 200px;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 .experiences {
