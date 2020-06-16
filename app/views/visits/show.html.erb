@@ -4,7 +4,9 @@
         <div class="visit-booking-desc">
             <h1><%= @visit.title %></h1>
             <h2><%= @visit.description  %></h2>
+            <h2><%= @visit.place %></h2>
             <h2><%= @visit.price %></h2>
+            <h2><%= @visit.tag %></h2>
         </div>
     </div>
     <div class="visit-booking-btn">
@@ -12,13 +14,32 @@
             <%= link_to 'Editer', edit_visit_path(@visit), class: 'btn btn-primary btn-formulaire-sub-edit'%>
             <%= link_to 'Supprimer', visit_path(@visit), class: 'btn btn-danger btn-formulaire-sub-delete', method: :delete, data: { confirm: 'Are you sure?' }%>
         <%end%>
-    </div>
-    <div class="visit-booking-form">
-    <%= simple_form_for ([ @visit, @booking ]) do |f| %>
-        <%= f.input :checking_date %>
-        <%= f.input :checkout_date %>
-        <%= f.submit "Reservez", class: "btn btn-primary btn-formulaire-sub" %>
-    <% end %>
+
+     <%= render 'shared/newbooking', visit: @visit, booking: @booking %> 
+    
+    
+    <h3>Reviews</h3>
+  <% if @visit.reviews.empty? %>
+    <p>Be the first to let a review</p>
+  <% else %>
+    <ul class="list-group">
+      <% @visit.reviews.each do |review| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span class="badge badge-primary badge-pill">
+            <% counter = 0 %>
+            <% 5.times do %>
+              <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+              <% counter += 1 %>
+            <% end %>
+          </span>
+          <%= review.description %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
     <%= link_to 'Back', visits_path  %>
+    </div>
+    <div>
+    <%= render 'shared/newreview', visit: @visit, review: @review %>
     </div>
 </div>
