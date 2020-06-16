@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   end
   root to: 'pages#home'
   resources :visits do
-    resources :bookings, only: [:new, :create, :index]
+    post 'bookings', to: 'bookings#create' 
+    post 'reviews', to: 'reviews#create'
+    resources :bookings, only: [:index]
+    #get "visits/reviews" => "reviews#show"
+    
   end
   get 'dashboard', to: 'pages#dashboard'
   get 'profile', to: "pages#profile"
