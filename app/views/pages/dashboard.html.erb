@@ -1,15 +1,26 @@
 <div class="container formulaire col-lg-4">
-<h1> Dashboard </h1
+<h1> Dashboard </h1>
 
 <h2> Mes reservations de visite</h2>
 <% @bookings.each do |booking|  %>
             <ul>
-            <li><%= booking.visit.title %></li>
-            <li><%= booking.visit.place %></li>
-            <li><%= booking.visit.price %> € </li>
+              <li><%= booking.visit.title %></li>
+              <li><%= booking.visit.description %></li>
+              <li><%= booking.visit.place %></li>
+              <li><%= booking.visit.price %> € </li>
             </ul>
             <% end %>
 
+
+        <h2> Demande de visite </h2>
+            <% @my_visits_bookings.each do |booking|  %>
+            <ul>
+                <li><%= booking.visit.title %></li>
+                <li><%= booking.visit.description %></li>
+                <li><%= booking.visit.price %> €</li>
+            </ul>
+            <% end %>
+  
  
 <%= link_to 'Back', visits_path, class: 'btn btn-primary btnback' %> 
 </div>

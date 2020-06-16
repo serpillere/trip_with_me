@@ -1,25 +1,33 @@
 <%# <h1> Vue index visit </h1> %>
 <div class="container d-flex justify-content-around flex-wrap col-lg-10">
-<% @visits.each do |visit| %>
-<%= link_to visit_path(visit) do %>
 
-    <div class="card-visit">
-        <% if visit.photo.attached?  %>
-            <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
-        <% end %>
-        <div class="card-info">
-        <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
-            <h3><%= visit.title %><h3>
-                <div class="card-info-bottom d-flex justify-content-between">
-                    <div><%= visit.place %></div>
-                    <div><%= visit.price %> € </div>
-                </div>
+    <% @visits.each do |visit| %>
+        <div class="card-visit">
+            <%= link_to visit_path(visit) do %>
+            <% if visit.photo.attached?  %>
+                <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
+            <% end %>
+            <div class="card-info">
+            <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
+                <h3><%= visit.title %><h3>
+                    <div class="card-info-bottom d-flex justify-content-between">
+                        <div><%= visit.place %></div>
+                        <div><%= visit.price %> € </div>
+                    </div>
+            </div>
+             <% end %>
         </div>
-    </div>
-<% end %>
-<% end %>
-<%= link_to 'Create my visit', new_visit_path, class: 'btn btn-primary btn btncreate btn-formulaire-sub-edit'   %>
+    <% end %>
 </div>
+
+
+    <%= link_to 'Create my visit', new_visit_path, class: 'btn btn-primary btn btncreate btn-formulaire-sub-edit'   %>
+    <div id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
 <%#= link_to 'Louez moi', car_path(car), class: 'btn btn-primary btnloc'%>
             <%#= link_to 'Voir la visite', visit_path(visit), class: 'btn btn-primary btnloc'%>
             <%#= visit.description %>
