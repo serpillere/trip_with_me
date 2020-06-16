@@ -45,7 +45,9 @@
     <%= link_to visit_path(visit) do %>
       <div class="card-visit">
         <% if visit.photo.attached?  %>
-          <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
+
+            <%= cl_image_tag visit.photo.key, class:"imgcardvisit"%>
+
         <% end %>
         <div class="card-info">
           <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
@@ -63,15 +65,16 @@
   <div class="etapes d-flex justify-content-between">
       <div class="text-center">
         <h2>ETAPE 1</h2>
-        <p>Publiez votre annonce et faites visiter votre quartier <p>
-      </div>
-      <div class="text-center">
+
+        <p>Rencontrez des habitants locaux selon leurs centres d’intérêts ou leur personnalité. <p>
+        </div>
+        <div class="text-center">
         <h2>ETAPE 2</h2>
-        <p>Rencontrez des habitants locaux selon leurs centres d’intérêts.<p>
-      </div>
+        <p>Visitez et découvrez pourquoi les habitants aiment le lieu qu'ils vous font découvrir.<p>
+        </div>
         <div class="text-center">
         <h2>ETAPE 3</h2>
-        <p>Faites votre visite et passez un moment convivial lors de votre voyage.<p>
-      </div>
-  </div>
+        <p>Publiez votre visite à votre tour et faites découvrir votre quartier.Devenez ambassadeur de votre ville/région<p>
+        </div>
+    </div>
 </div>
