@@ -60,6 +60,12 @@
     <% end %>
   </div>
 
+  <div class="container d-flex justify-content-around flex-wrap col-lg-8 mapbox" id="map"
+    style="width: 50%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
   <div class="etapes d-flex justify-content-between">
       <div class="text-center">
         <h2>ETAPE 1</h2>
