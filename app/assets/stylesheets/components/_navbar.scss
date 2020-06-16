@@ -1,13 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #faaf2a;
+  background: #F8AF00;
   padding-left: 60px;
   padding-right: 60px;
-  box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.25);
+  // box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.25);
   // color:#FD7C20;
   margin-bottom: 40px;
   color: white;
   height: 80px;
+  z-index: 5;
 }
 
 .navbar-lewagon .navbar-collapse {

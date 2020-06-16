@@ -1,4 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591964426/amies-plage-ete-voyage-joie_ot0afn.jpg);">
+<div class="banner" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592339371/banner_lnj46m.png);-webkit-filter: drop-shadow(0px 0px 10px #cecece);
+  filter: drop-shadow(0px 0px 10px #cecece)">
   <div class="container picture-banner">
     <h1>Un voyage authentique</h1>
     <%# <p>Un voyage authentique</p> %>
@@ -18,10 +19,10 @@
   </div>
 
 <div>
-  <div class="container col-lg-9">
+  <div class=" col-lg-122">
       <div class="aventure">
-          <h2>Partir à l'aventure</h2>
-          <div class="aventure-galery d-flex justify-content-around flex-wrap">
+          <h2 class="title-size">Partir à l'aventure</h2>
+          <div class="aventure-galery d-flex justify-content-center">
             <%= link_to "#" do %>
               <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591887844/IMG_5216_zudc1r.jpg", class: "img-aventure" %>
             <% end %>
@@ -35,30 +36,33 @@
   </div>
 
   <div class="experiences">
-      <h2>Découvrez l’expérience de nos locaux</h2>
+      <h2 class="title-size">Découvrez l’expérience de nos locaux</h2>
       <div>
       </div>
   </div>
     
   <div class="container d-flex justify-content-around flex-wrap">
     <% @visits.each do |visit| %>
-    <%= link_to visit_path(visit) do %>
-      <div class="card-visit">
-        <% if visit.photo.attached?  %>
+    <div class="ticket-img" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592329375/ticket_mm8e6p.png); background-size:cover;">
 
-            <%= cl_image_tag visit.photo.key, class:"imgcardvisit"%>
 
-        <% end %>
-        <div class="card-info">
-          <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
-          <h3><%= visit.title %><h3>
-          <div class="card-info-bottom d-flex justify-content-between">
-              <p><%= visit.place %></p>
-              <p><%= visit.price %> €  </p>
-          </div>
+        <%# <div class="card-visit"> %>
+       <%# <%= image_tag "https://res.cloudinary.com/dairqume0/image/upload/v1592329375/ticket_mm8e6p.png", class: "ticket-img" %> 
+            <%= link_to visit_path(visit) do %>
+            <% if visit.photo.attached?  %>
+                <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
+            <% end %>
+            <div class="card-info">
+            <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
+                <h3><%= visit.title[0..23] %> ...<h3>
+                <h4><%= visit.price %> € </h4>
+                    <div class="card-info-bottom">
+                        <div class="black-line"></div>
+                        <h5><%= visit.place %></h5>
+                    </div>
+            </div>
+             <% end %>
         </div>
-      </div>
-    <% end %>
     <% end %>
   </div>
 
