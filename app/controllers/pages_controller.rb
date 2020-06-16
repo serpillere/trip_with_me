@@ -3,6 +3,13 @@ class PagesController < ApplicationController
   
   def home
     @visits = Visit.all
+    @geocodes = Visit.geocoded # returns flats with coordinates
+         @markers = @geocodes.map do |visit|
+        {
+            lat: visit.latitude,
+            lng: visit.longitude
+        }
+    end
   end
 
   def dashboard
