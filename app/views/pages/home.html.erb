@@ -5,62 +5,73 @@
   </div>
 </div>
 
+  <div class="search-bar">
+    <%= form_tag visits_path, class: "form-inline col-sm-8", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control mr-sm-2",
+        id: "address_input",
+        placeholder: "   Entrez votre adresse"
+      %>
+      <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
-<div class="container col-lg-9">
-    <div class="aventure">
-        <h2>Partir à l'aventure</h2>
-        <div class="aventure-galery d-flex justify-content-around flex-wrap">
+<div>
+  <div class="container col-lg-9">
+      <div class="aventure">
+          <h2>Partir à l'aventure</h2>
+          <div class="aventure-galery d-flex justify-content-around flex-wrap">
             <%= link_to "#" do %>
-    <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591887844/IMG_5216_zudc1r.jpg", class: "img-aventure" %>
-  <% end %>
+              <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591887844/IMG_5216_zudc1r.jpg", class: "img-aventure" %>
+            <% end %>
             <%= link_to "#" do %>
-    <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591887819/42770983_306332839963487_1646390449230839808_n_wx7twa.jpg", class: "img-aventure" %>
-  <% end %>
+              <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591887819/42770983_306332839963487_1646390449230839808_n_wx7twa.jpg", class: "img-aventure" %>
+            <% end %>
             <%= link_to "#" do %>
-    <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591887903/IMG_2313_heavvx.jpg", class: "img-aventure" %>
-  <% end %>
-            
-        </div>
-    </div>
+              <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1591887903/IMG_2313_heavvx.jpg", class: "img-aventure" %>
+            <% end %>
+      </div>
+  </div>
 
-    <div class="experiences">
-        <h2>Découvrez l’expérience de nos locaux</h2>
-        <div>
-        </div>
-    </div>
+  <div class="experiences">
+      <h2>Découvrez l’expérience de nos locaux</h2>
+      <div>
+      </div>
+  </div>
     
-    <div class="container d-flex justify-content-around flex-wrap">
-<% @visits.each do |visit| %>
-<%= link_to visit_path(visit) do %>
-
-    <div class="card-visit">
+  <div class="container d-flex justify-content-around flex-wrap">
+    <% @visits.each do |visit| %>
+    <%= link_to visit_path(visit) do %>
+      <div class="card-visit">
         <% if visit.photo.attached?  %>
-            <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
+          <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
         <% end %>
         <div class="card-info">
-        <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
-            <h3><%= visit.title %><h3>
-                <div class="card-info-bottom d-flex justify-content-between">
-                    <p><%= visit.place %></p>
-                    <p><%= visit.price %> €  </p>
-                </div>
+          <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
+          <h3><%= visit.title %><h3>
+          <div class="card-info-bottom d-flex justify-content-between">
+              <p><%= visit.place %></p>
+              <p><%= visit.price %> €  </p>
+          </div>
         </div>
-    </div>
-<% end %>
-<% end %>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
 
-    <div class="etapes d-flex justify-content-between">
-        <div class="text-center">
+  <div class="etapes d-flex justify-content-between">
+      <div class="text-center">
         <h2>ETAPE 1</h2>
         <p>Publiez votre annonce et faites visiter votre quartier <p>
-        </div>
-        <div class="text-center">
+      </div>
+      <div class="text-center">
         <h2>ETAPE 2</h2>
         <p>Rencontrez des habitants locaux selon leurs centres d’intérêts.<p>
-        </div>
+      </div>
         <div class="text-center">
         <h2>ETAPE 3</h2>
         <p>Faites votre visite et passez un moment convivial lors de votre voyage.<p>
-        </div>
-    </div>
+      </div>
+  </div>
 </div>
