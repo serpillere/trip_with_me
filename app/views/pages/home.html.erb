@@ -1,19 +1,17 @@
-<div class="banner" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592339371/banner_lnj46m.png);-webkit-filter: drop-shadow(0px 0px 10px #cecece);
+<div class="banner picture-banner d-flex flex-row px-3 row" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592339371/banner_lnj46m.png);-webkit-filter: drop-shadow(0px 0px 10px #cecece);
   filter: drop-shadow(0px 0px 10px #cecece)">
 
-  <div class=" picture-banner d-flex flex-row justify-content-between px-3">
-
-    <div class="d-flex flex-direction-column banner-vertical">
-      <div class="white-circle">
-      </div>
-      <div class="white-circle">
-      </div>
-      <h1> Trip with me </h1>
-      <div class="black-line-trip">
-      </div>
+  <div class="d-flex flex-direction-column banner-vertical col-1">
+    <div class="white-circle">
     </div>
+    <div class="white-circle">
+    </div>
+    <h1> Trip with me </h1>
+    <div class="black-line-trip">
+    </div>
+  </div>
 
-    <div class="d-flex flex-column text-banner">
+  <div class="d-flex flex-column text-banner col-6">
       <h1> Savourez votre voyage </h1>
       <div class="space-banner">
       </div>
@@ -22,28 +20,22 @@
       <h2>東京 - 수원 - Paris - Madrid - Berlin - London ...</h2>
       <h2>Choisissez votre local, destination et découvrez ses secrets</h2>
 
- <div class="search-bar">
-    <%= form_tag visits_path, class: "form-inline", method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control mr-sm-2",
-
-        #id: "address_input",
-        placeholder: "Où voulez-vous partir ?"
-
-      %>
-      <%= submit_tag "Rechercher", class: "btn btn-search " %>
-    <% end %>
-  </div> 
-    </div>
-  
-    <div class="d-flex align-items-center justify-content-center img-ban" >
-    <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1592383327/banner-draw_tlajj4.png", class:"illustration" %>
-    </div>
-
-
-    <%# <p>Un voyage authentique</p> %>
+      <div class="search-bar">
+        <%= form_tag visits_path, class: "form-inline", method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control mr-sm-2",
+            placeholder: "Où voulez-vous partir ?"
+          %>
+          <%= submit_tag "Rechercher", class: "btn btn-search " %>
+          <% end %>
+      </div> 
   </div>
+
+    <div class="d-flex align-items-center justify-content-center img-ban col-3" >
+     <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1592383327/banner-draw_tlajj4.png", class:"illustration" %>
+    </div>
+
 </div>
 
 
@@ -70,7 +62,7 @@
       </div>
   </div>
     
-  <div class="container d-flex justify-content-around flex-wrap">
+  <div class="container d-flex justify-content-around flex-wrap col-10" >
     <% @visits.each do |visit| %>
     <div class="ticket-img" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592329375/ticket_mm8e6p.png); background-size:cover;">
 
