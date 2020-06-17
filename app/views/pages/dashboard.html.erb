@@ -4,10 +4,12 @@
 <h2> Mes reservations de visite</h2>
 <% @bookings.each do |booking|  %>
             <ul>
-              <li><%= booking.visit.title %></li>
-              <li><%= booking.visit.description %></li>
-              <li><%= booking.visit.place %></li>
-              <li><%= booking.visit.price %> € </li>
+              <li><strong>Titre : </strong><%= booking.visit.title %></li>
+              <li><strong>Description de la visite : </strong><%= booking.visit.description %></li>
+              <li><strong>Ville :</strong><%= booking.visit.place %></li>
+              <li><strong>Date de debut :</strong> <%= booking.checking_date %></li>
+              <li><strong>Date de fin :</strong> <%= booking.checkout_date %></li>
+              <li><strong>Prix :</strong> <%= booking.visit.price %> € </li>
             </ul>
             <% end %>
 
@@ -15,9 +17,13 @@
         <h2> Demande de visite </h2>
             <% @my_visits_bookings.each do |booking|  %>
             <ul>
-                <li><%= booking.visit.title %></li>
-                <li><%= booking.visit.description %></li>
-                <li><%= booking.visit.price %> €</li>
+                <li><strong>Titre :</strong> <%= booking.visit.title %></li>
+                <li><strong>Description de la visite :</strong> <%= booking.visit.description %></li>
+                <li><strong>Ville :</strong> <%= booking.visit.place %></li>
+                 <li><strong>Ce qui le caracterise :</strong> <%= booking.visit.tag %> € </li>
+                <li><strong>Date de debut :</strong> <%= booking.checking_date %></li>
+                <li><strong>Date de fin :</strong> <%= booking.checkout_date %></li>
+                <li><strong>Prix :</strong> <%= booking.visit.price %> €</li>
             </ul>
             <% end %>
   

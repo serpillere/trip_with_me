@@ -2,6 +2,11 @@ class VisitsController < ApplicationController
     skip_before_action :authenticate_user!, only: :index
     def index
         @visits = Visit.all
+        if params[:query].present?
+            @visits = Visit.where("place ILIKE ?", "%#{params[:query]}%")
+          else
+            @visits = Visit.all
+          end
         @geocodes = Visit.geocoded # returns flats with coordinates
          @markers = @geocodes.map do |visit|
         {
