@@ -1,8 +1,9 @@
-<div class="container formulaire col-lg-4">
+<div class="container col-lg-5">
     <%# <div class="row justify-content-center"> %>
         <%# <div class="col-md-12"> %>
-        <div class="formulaire-cell">
+    <div class="ticket-form" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592329375/ticket_mm8e6p.png); background-size:cover;">
             <h1> Create your visit </h1>
+
             <%= simple_form_for @visit do |f| %>
                 <p><%= f.input :title %></p>
                 <p><%= f.input :description %></p>
@@ -12,8 +13,9 @@
                 <p><%= f.input :photo, as: :file %></p>
                 <%= f.button :submit, class: 'btn btn-primary btn-formulaire-sub' %>
             <% end %>
-        </div>
+            
         <%# </div> %>
-    <%# </div> %>
-    <%= link_to 'Back', visits_path  %>
+        <%# </div> %>
+        <%= link_to 'Back', visits_path  %>
+    </div>
 </div>

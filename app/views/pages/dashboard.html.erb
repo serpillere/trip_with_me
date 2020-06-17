@@ -1,26 +1,32 @@
-<div class="container formulaire col-lg-4">
-<h1> Dashboard </h1>
+<div class="container col-lg-6">
 
-<h2> Mes reservations de visite</h2>
-<% @bookings.each do |booking|  %>
-            <ul>
-              <li><%= booking.visit.title %></li>
-              <li><%= booking.visit.description %></li>
-              <li><%= booking.visit.place %></li>
-              <li><%= booking.visit.price %> € </li>
-            </ul>
-            <% end %>
-
-
-        <h2> Demande de visite </h2>
-            <% @my_visits_bookings.each do |booking|  %>
-            <ul>
-                <li><%= booking.visit.title %></li>
-                <li><%= booking.visit.description %></li>
-                <li><%= booking.visit.price %> €</li>
-            </ul>
-            <% end %>
-  
- 
-<%= link_to 'Back', visits_path, class: 'btn btn-primary btnback' %> 
+    <h1> Dashboard </h1>
+      <br>
+    <h2> Mes reservations de visite</h2>
+      <br>
+  <div class="ticket-dashboard" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592341558/ticketrot_2_jafx13.png); background-size:cover;">
+    <% @bookings.each do |booking|  %>
+      <ul>
+        <li><%= booking.visit.title %></li>
+        <li><%= booking.visit.description %></li>
+        <li><%= booking.visit.place %></li>
+        <li><%= booking.visit.price %> € </li>
+      </ul>
+    <% end %>
+  </div>
+    <br>
+    <h2> Demande de visite </h2>
+    <br>
+  <div class="ticket-dashboard" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592341558/ticketrot_2_jafx13.png); background-size:cover;">
+    <% @my_visits_bookings.each do |booking|  %>
+    <ul>
+        <li><%= booking.visit.title %></li>
+        <li><%= booking.visit.description %></li>
+        <li><%= booking.visit.price %> €</li>
+    </ul>
+    <% end %>
+  </div>
+  <br>
+  <%= link_to 'Back', visits_path, class: 'btn btn-primary btnback' %> 
+  <br>
 </div>
