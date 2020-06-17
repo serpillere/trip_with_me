@@ -10,4 +10,11 @@ class Visit < ApplicationRecord
   validates :price, presence: true
   validates :place, presence: true
   validates :photo, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_place_and_title,
+    against: [ :place, :title ],
+    using: {
+      tsearch: { prefix: true } 
+    }
 end
