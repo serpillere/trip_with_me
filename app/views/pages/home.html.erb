@@ -1,22 +1,49 @@
 <div class="banner" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592339371/banner_lnj46m.png);-webkit-filter: drop-shadow(0px 0px 10px #cecece);
   filter: drop-shadow(0px 0px 10px #cecece)">
-  <div class="container picture-banner">
-    <h1>Un voyage authentique</h1>
-    <%# <p>Un voyage authentique</p> %>
-  </div>
-</div>
 
-  <div class="search-bar">
-    <%= form_tag visits_path, class: "form-inline col-sm-8", method: :get do %>
+  <div class=" picture-banner d-flex flex-row justify-content-between px-3">
+
+    <div class="d-flex flex-direction-column banner-vertical">
+      <div class="white-circle">
+      </div>
+      <div class="white-circle">
+      </div>
+      <h1> Trip with me </h1>
+      <div class="black-line-trip">
+      </div>
+    </div>
+
+    <div class="d-flex flex-column text-banner">
+      <h1> Savourez votre voyage </h1>
+      <div class="space-banner">
+      </div>
+      <div class="black-line-voyage">
+      </div>
+      <h2>東京 - 수원 - Paris - Madrid - Berlin - London ...</h2>
+      <h2>Choisissez votre local, destination et découvrez ses secrets</h2>
+
+ <div class="search-bar">
+    <%= form_tag visits_path, class: "form-inline", method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control mr-sm-2",
         id: "address_input",
-        placeholder: "   Entrez votre adresse"
+        placeholder: "Entrez votre adresse"
       %>
-      <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+      <%= submit_tag "Rechercher", class: "btn btn-search " %>
     <% end %>
+  </div> 
+    </div>
+  
+    <div class="d-flex align-items-center justify-content-center img-ban" >
+    <%= image_tag "https://res.cloudinary.com/ddkbkwzfv/image/upload/v1592383327/banner-draw_tlajj4.png", class:"illustration" %>
+    </div>
+
+
+    <%# <p>Un voyage authentique</p> %>
   </div>
+</div>
+
 
 <div>
   <div class=" col-lg-12">

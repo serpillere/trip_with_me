@@ -17,3 +17,26 @@
 .visit-booking-desc {
      margin: 15px;
 }
+
+.font-helvetica {
+    font-family: "helvetica";
+}
+
+.style-tag {
+    font-size: 15px;
+    color: #666666;
+    font-style: italic;
+}
+
+.white-circle {
+    width: 49px;
+height: 49px;
+background: #FFFFFF;
+box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+border-radius: 50%;
+}
+
+.banner-vertical {
+    writing-mode: sideways-lr;
+    padding-left: 10px;
+}

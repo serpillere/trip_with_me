@@ -1,15 +1,17 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 120px;
   box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.25);
   margin-top: -40px;
   height: 75vh;
+  width: 100%;
   position: relative;
 }
 
 .picture-banner {
-  position: absolute;
+ position: relative;
+ width: 100%;
+ height: 100%;
 }
 
 .banner h1 {
@@ -28,6 +30,87 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.white-circle {
+    width: 49px;
+height: 49px;
+background: #FFFFFF;
+box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+border-radius: 50%;
+margin: 30px 0px 10px 0px;
+}
+
+.banner-vertical {
+    writing-mode: sideways-lr;
+    padding-right: 30px;
+    height: 100%;
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px dashed black;
+    
+}
+.banner-vertical h1{
+    font-size: 40px;
+    
+}
+
+.img-ban {
+  width: 90%;
+
+}
+
+.illustration { 
+  width: auto;
+  height: 40vh;
+  object-fit: cover;
+}
+.space-banner {
+    width: 100%;
+    height: 20%;
+}
+.text-banner {
+  color: white;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  padding: 3em;
+  margin-left: 20px;
+  position: relative;
+
+}
+.text-banner h1 {
+  font-family: 'Lobster';
+  margin-top: 50px;
+}
+
+.text-banner h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 1.5rem;
+}
+
+.black-line-voyage {
+  width: 100%;
+  height: 2px;
+  margin: 20px 0px;
+  background-color: rgba(0,0,0,.6)
+}
+
+.search-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-bar .form-control {
+  width: 500px;
+}
+
+
 .aventure{
     margin-top: 40px;
 }
@@ -55,4 +138,12 @@
 .etapes {
     margin-top: 100px;
     margin-bottom: 100px;
+}
+
+.form-inline {
+  flex-wrap: nowrap;
+}
+
+.form-inline .form-control {
+  margin: 0px;
 }

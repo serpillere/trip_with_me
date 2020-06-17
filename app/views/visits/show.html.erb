@@ -3,12 +3,12 @@
         <%= cl_image_tag @visit.photo.key, height: 300, width: 400, crop: :fill, class:"img-visit-booking" %>
         <div class="visit-booking-desc">
             <h1><%= @visit.title %></h1>
-            <h2><%= @visit.description  %></h2>
-            <h2><%= @visit.place %></h2>
-            <h2><%= @visit.price %></h2>
-            <h2><%= @visit.tag %></h2>
+            <h2 class="font-helvetica"><%= @visit.description %></h2>
+            <h2 class="font-helvetica"><%= @visit.place %></h2>
+            <h2 class="font-helvetica"><%= @visit.price %> €</h2>
+            <h2 class="font-helvetica style-tag"><%= @visit.tag %></h2>
         </div>
-    </div>
+    </div> 
     <div class="visit-booking-btn">
         <% if current_user.id == @visit.user_id %>
             <%= link_to 'Editer', edit_visit_path(@visit), class: 'btn btn-primary btn-formulaire-sub-edit'%>
