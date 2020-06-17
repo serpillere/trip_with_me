@@ -2,17 +2,23 @@
 <div class="container d-flex justify-content-around flex-wrap col-lg-10">
 
     <% @visits.each do |visit| %>
-        <div class="card-visit">
+
+<div class="ticket-img" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592329375/ticket_mm8e6p.png); background-size:cover;">
+
+
+        <%# <div class="card-visit"> %>
+       <%# <%= image_tag "https://res.cloudinary.com/dairqume0/image/upload/v1592329375/ticket_mm8e6p.png", class: "ticket-img" %> 
             <%= link_to visit_path(visit) do %>
             <% if visit.photo.attached?  %>
                 <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
             <% end %>
             <div class="card-info">
             <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
-                <h3><%= visit.title %><h3>
-                    <div class="card-info-bottom d-flex justify-content-between">
-                        <div><%= visit.place %></div>
-                        <div><%= visit.price %> € </div>
+                <h3><%= visit.title[0..23] %> ...<h3>
+                <h4><%= visit.price %> € </h4>
+                    <div class="card-info-bottom">
+                        <div class="black-line"></div>
+                        <h5><%= visit.place %></h5>
                     </div>
             </div>
              <% end %>
@@ -23,11 +29,7 @@
 
     <%= link_to 'Create my visit', new_visit_path, class: 'btn btn-primary btn btncreate btn-formulaire-sub-edit'   %>
 
-    <div class="container d-flex justify-content-around flex-wrap col-lg-8 mapbox" id="map"
-        style="width: 50%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+
 
 <%#= link_to 'Louez moi', car_path(car), class: 'btn btn-primary btnloc'%>
             <%#= link_to 'Voir la visite', visit_path(visit), class: 'btn btn-primary btnloc'%>
