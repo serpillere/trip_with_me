@@ -1,0 +1,50 @@
+.ticket-dashboard {
+    -webkit-filter: drop-shadow(0px 0px 10px #cecece);
+  filter: drop-shadow(0px 0px 10px #cecece);
+    width: 800px;
+    height: 400px;
+    border-radius: 3px;
+    background-size: 50%;
+    background-position: center;
+    margin: 30px;
+    color: black;
+    position: relative;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+.ticket-dashboard h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.ticket-dashboard-visit h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.ticket-dashboard-visit {
+    -webkit-filter: drop-shadow(0px 0px 10px #cecece);
+    filter: drop-shadow(0px 0px 10px #cecece);
+    width: 800px;
+    height: 400px;
+    border-radius: 3px;
+    background-size: 50%;
+    background-position: center;
+    margin: 30px;
+    color: black;
+    position: relative;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+.ticket-dashboard-guide {
+   width: 50%;
+   padding-left: 10px;
+}
+
+.ticket-dashboard-client {
+    width: 50%;
+    border-right: 3px dashed black;
+    padding-left: 40px;
+
+}

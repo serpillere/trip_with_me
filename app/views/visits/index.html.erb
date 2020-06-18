@@ -27,10 +27,12 @@
                 <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
             <% end %>
             <div class="card-info">
+
             <% if visit.user.avatar.attached? %>
             <%=  cl_image_tag visit.user.avatar.key, class: "img-card-avatar rounded-circle"  %>
             <% end %>
                 <h3><%= visit.title[0..23] %> ...<h3>
+
                 <h4><%= visit.price %> € </h4>
                     <div class="card-info-bottom">
                         <div class="black-line"></div>
