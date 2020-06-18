@@ -1,12 +1,12 @@
 <div class="dashboard container col-lg-6">
 
-    <h1> Dashboard </h1>
+    <h1> Tableau de bord </h1>
       <br>
     <h2> Mes reservations de visite</h2>
       <br>
-  <div class="ticket-dashboard d-flex flex-row" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592341558/ticketrot_2_jafx13.png); background-size:cover;">
+  <div class="ticket-dashboard d-flex flex-row row" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592341558/ticketrot_2_jafx13.png); background-size:cover;">
     <% @bookings.each do |booking|  %>
-      <div class="ticket-dashboard-client align-self-center">
+      <div class="ticket-dashboard-client align-self-center col-6">
         <h3><strong>Titre : </strong><%= booking.visit.title %></h3>
         <%# <li><strong>Description de la visite : </strong><%= booking.visit.description %>
         <h3><strong>Ville :</strong><%= booking.visit.place %></h3>
@@ -18,19 +18,10 @@
         <h3>RDV a 9h</h3>
         <h3>num telephone : 0650696650</h3>
       </div>
-      <div class="ticket-dashboard-guide align-self-center">
-        <ul>
-          <h3><strong>Titre :</strong><%= booking.visit.title %></h3>
-          <%# <li><strong>Description de la visite : </strong><%= booking.visit.description %>
-          <h3><strong>Ville :</strong><%= booking.visit.place %></h3>
-          <h3><strong>Date de debut :</strong> <%= booking.checking_date %></h3>
-          <%# <li><strong>Date de fin :</strong> <%= booking.checkout_date %>
-          <h3><strong>Prix :</strong> <%= booking.visit.price %> € </h3>
-          <h3>3 personne(s)</h3>
-          <h3>RDV sortie 5 metro 6</h3>
-          <h3>RDV a 9h</h3>
-          <h3>num telephone : 0650696650</h3>
-        </ul>
+      <div class="col-5  d-flex justify-content-center align-items-center">
+      <% if booking.visit.user.avatar.attached? %>
+                  <%=  cl_image_tag booking.visit.photo.key, style: "width:200px; align-items:center; justify-content:center;",class: "img-card rounded"  %>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -38,26 +29,23 @@
     <h2> Demande de visite </h2>
     
     <br>
-  <div class="ticket-dashboard-visit" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592341558/ticketrot_2_jafx13.png); background-size:cover;">
+  <div class="ticket-dashboard-visit d-flex flex-row row" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592341558/ticketrot_2_jafx13.png); background-size:cover;">
     <% @my_visits_bookings.each do |booking|  %>
-    <ul>
-
-                 <li><strong>Titre :</strong> <%= booking.visit.title %></li>
-                 <li><strong>Prénom :</strong> <%= booking.visit.user.first_name %></li>
-                 <li><strong>Nom :</strong> <%= booking.visit.user.last_name %></li>
-                 <li><strong>Age :</strong> <%= booking.visit.user.age %></li>
-                 <li><strong>Habite à :</strong> <%= booking.visit.user.city %></li>
-                 <li><strong>Langue :</strong> <%= booking.visit.user.langage %></li>
-                <li><strong>Description de la visite :</strong> <%= booking.visit.description %></li>
-                <li><strong>Ville qu'il veut visiter:</strong> <%= booking.visit.place %></li>
-                 <li><strong>Ce qui le caracterise :</strong> <%= booking.visit.tag %> € </li>
-                <li><strong>Date de debut :</strong> <%= booking.checking_date %></li>
-                <li><strong>Date de fin :</strong> <%= booking.checkout_date %></li>
-                <li><strong>Prix :</strong> <%= booking.visit.price %> €</li>
-
-    </ul>
+    <div class="ticket-dashboard-client align-self-center col-6">
+    
+                <h3> <strong>Titre :</strong> <%= booking.visit.title %> </h3>
+                <h3> <strong>Prénom :</strong> <%= booking.visit.user.first_name %> </h3>
+                <h3> <strong>Nom :</strong> <%= booking.visit.user.last_name %> </h3>
+                <h3> <strong>Age :</strong> <%= booking.visit.user.age %> </h3>
+                <h3> <strong>Habite à :</strong> <%= booking.visit.user.city %> </h3>
+                <h3> <strong>Langue parlé :</strong> <%= booking.visit.user.langage %> </h3>
+                <h3> <strong>Ville qu'il veut visiter:</strong> <%= booking.visit.place %> </h3>
+                <h3><strong>Date de debut :</strong> <%= booking.checking_date %> </h3>
+                <h3><strong>Prix :</strong> <%= booking.visit.price %> €</h3>
+    </div>
     <% end %>
   </div>
+  
   <br>
-  <%= link_to 'Back', visits_path, class: 'btn btn-primary btnback' %> 
+  <%= link_to 'Retour', visits_path, class: 'btn btn-primary btnback' %> 
   <br>
