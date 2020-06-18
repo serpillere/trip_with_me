@@ -1,6 +1,20 @@
 <%# <h1> Vue index visit </h1> %>
 <div class="container d-flex justify-content-around flex-wrap col-lg-10">
+<!-- NAVBAR CHECK 
+<div class="search-bar">
+    <%= form_tag visits_path, class: "form-inline", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control mr-sm-2",
 
+        #id: "address_input",
+        placeholder: "Où voulez-vous partir ?"
+
+      %>
+      <%= submit_tag "Rechercher", class: "btn btn-search " %>
+    <% end %>
+  </div> 
+  !-->
     <% @visits.each do |visit| %>
 
 <div class="ticket-img" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592329375/ticket_mm8e6p.png); background-size:cover;">
@@ -13,8 +27,12 @@
                 <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
             <% end %>
             <div class="card-info">
-            <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
-                <h3><%= visit.title[0..23] %><h3>
+
+            <% if visit.user.avatar.attached? %>
+            <%=  cl_image_tag visit.user.avatar.key, class: "img-card-avatar rounded-circle"  %>
+            <% end %>
+                <h3><%= visit.title[0..23] %> ...<h3>
+
                 <h4><%= visit.price %> € </h4>
                     <div class="card-info-bottom">
                         <div class="black-line"></div>
