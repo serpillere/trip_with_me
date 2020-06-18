@@ -82,7 +82,9 @@
                 <%= cl_image_tag visit.photo.key, class:"imgcardvisit" %>
             <% end %>
             <div class="card-info">
-            <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFdYruUH8hPDg/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=-jIcBAw0LCpNqIFhfT379D2NVwD9U3ZVmFSSJFyDRwg", class: "img-card-avatar rounded-circle" %>
+            <% if visit.user.avatar.attached? %>
+            <%=  cl_image_tag visit.user.avatar.key, class: "img-card-avatar rounded-circle"  %>
+            <% end %>
                 <h3><%= visit.title[0..23] %> ...<h3>
                 <h4><%= visit.price %> € </h4>
                     <div class="card-info-bottom">

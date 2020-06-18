@@ -18,13 +18,19 @@
   </div>
     <br>
     <h2> Demande de visite </h2>
+    
     <br>
   <div class="ticket-dashboard" style="background-image:url(https://res.cloudinary.com/dairqume0/image/upload/v1592341558/ticketrot_2_jafx13.png); background-size:cover;">
     <% @my_visits_bookings.each do |booking|  %>
     <ul>
                  <li><strong>Titre :</strong> <%= booking.visit.title %></li>
+                 <li><strong>Prénom :</strong> <%= booking.visit.user.first_name %></li>
+                 <li><strong>Nom :</strong> <%= booking.visit.user.last_name %></li>
+                 <li><strong>Age :</strong> <%= booking.visit.user.age %></li>
+                 <li><strong>Habite à :</strong> <%= booking.visit.user.city %></li>
+                 <li><strong>Langue :</strong> <%= booking.visit.user.langage %></li>
                 <li><strong>Description de la visite :</strong> <%= booking.visit.description %></li>
-                <li><strong>Ville :</strong> <%= booking.visit.place %></li>
+                <li><strong>Ville qu'il veut visiter:</strong> <%= booking.visit.place %></li>
                  <li><strong>Ce qui le caracterise :</strong> <%= booking.visit.tag %> € </li>
                 <li><strong>Date de debut :</strong> <%= booking.checking_date %></li>
                 <li><strong>Date de fin :</strong> <%= booking.checkout_date %></li>

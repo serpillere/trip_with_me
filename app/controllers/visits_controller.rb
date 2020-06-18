@@ -1,6 +1,7 @@
 class VisitsController < ApplicationController
     skip_before_action :authenticate_user!, only: :index
     def index
+        @user = current_user
         @visits = Visit.all
         if params[:query].present?
             @visits = Visit.where("place ILIKE ?", "%#{params[:query]}%")
@@ -14,7 +15,8 @@ class VisitsController < ApplicationController
             lng: visit.longitude
         }
     end
-    end
+    
+ end
 
     def show
         @visit = Visit.find(params[:id])
@@ -53,6 +55,7 @@ class VisitsController < ApplicationController
 
         redirect_to visits_path
     end
+
 
     private 
 
